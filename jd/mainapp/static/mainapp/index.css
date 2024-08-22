@@ -1,0 +1,153 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body,
+html {
+    height: 100%;
+    background: rgb(23, 23, 23);
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main_conteiner {
+    transition: 0.3s;
+    flex-grow: 1;
+    flex: 1 0 auto;
+}
+
+header .logo {
+    color: white;
+    size: 25px;
+    margin-left: 7%;
+    position: absolute;
+    margin-top: 15px;
+
+}
+
+header {
+    padding: 2% 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav {
+    float: right;
+}
+nav ul li a {
+    color: white;
+    size: 25px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav ul li a h1:hover {
+    text-shadow: 0 0 0.8em rgba(252, 0, 0, 0.586);
+}
+
+header img {
+    height: 75px;
+
+}
+
+header * {
+    display: inline-block;
+}
+
+.menu-burger {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    display: inline-block;
+    margin-top: 15px;
+    left: -31%;
+}
+
+.menu-burger span {
+    margin-top: 5px;
+    border-bottom: 4px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+}
+
+.menu-burger span:nth-of-type(2) {
+    top: calc(50% - 10px);
+}
+.menu-burger span:nth-of-type(3) {
+    top: calc(50% + 10px);
+}
+
+.menu-background,
+.menu {
+    transform: translateX(-100%);
+    position: fixed;
+    min-height: 100%;
+    width: 15%;
+    display: block;
+    transition: 0.3s;
+    z-index: 3;
+    color: white;
+    background: linear-gradient(to right, rgba(171, 0, 149, 0.57), rgba(91, 17, 149, 0.467));
+    border-top-right-radius: 30px;
+}
+.menu-background {
+    z-index: 2;
+    background: rgb(23, 23, 23);
+}
+
+.menu-background.active,
+.menu.active {
+    transform: translateX(0);
+    transition: 0.3s;
+}
+.menu-burger.active span {
+    transition: 0.3s;
+}
+
+.menu-burger.active span:nth-of-type(1) {
+    display: none;
+}
+.menu-burger.active span:nth-of-type(2) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(45deg);  
+}
+.menu-burger.active span:nth-of-type(3) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(-45deg); 
+}
+
+.menu h1 {
+    text-align: center;
+    size: 20px;
+    transition: 0.3s;
+    margin: 20px;
+}
+
+.menu h1:hover {
+    text-shadow: 0 0 0.8em rgba(252, 0, 0, 0.586);
+}
+
+.menu ul li {
+    padding: 5px;
+    padding-left: 20px;
+    transition: 0.3s;
+    font-size: 20px;
+}
+
+.menu ul li:hover {
+    background: rgba(92, 17, 149, 0.237);
+}

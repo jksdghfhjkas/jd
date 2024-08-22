@@ -1,0 +1,81 @@
+{% load static %}
+{% load mainapp_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="{% static 'mainapp/index.css' %}">
+
+    {% block style_link %}{% endblock %}
+</head>
+<body>
+    
+    <div class="wrapper">
+        <header>
+            <img src="{% static 'mainapp/img/logo.png' %}" alt="автор долбаеб">
+            <h1 class="logo">Mysite</h1>
+
+            <div class="menu-burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav>
+
+                {% get_url as urls %}
+
+                <ul>
+                    <li><a href="{{ urls.register }}"><h1>Войти</h1></a></li>
+                </ul>
+            </nav>
+
+        </header>
+
+        <div class="main_conteiner">
+
+
+            <div class="menu-background"></div>
+            <div class="menu">
+
+                <h1>Mysite</h1>
+
+                <ul>
+                    <li>Тут</li>
+                    <li>я</li>
+                    <li>создал</li>
+                    <li>выпадающее</li>
+                    <li>меню</li>
+                </ul>
+            </div>
+
+            {% block content %}{% endblock %}
+        </div>
+
+        <footer>
+            <h1>hello footer</h1>
+        </footer>
+
+    </div>
+
+    {% block javasript %}{% endblock %}
+
+    <script>
+        var menu = document.querySelector(".menu");
+        var menu_background = document.querySelector(".menu-background");
+        var menu_burger = document.querySelector(".menu-burger");
+
+        menu_burger.addEventListener("click", function(){
+            menu_burger.classList.toggle("active");
+            menu_background.classList.toggle("active");
+            menu.classList.toggle("active");
+        })
+
+
+    </script>
+</body>
+</html>

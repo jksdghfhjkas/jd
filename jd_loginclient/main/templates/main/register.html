@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post">
+        
+        {% csrf_token %}
+        
+        <input type="email" name="email" placeholder="Почта">
+        <input type="password" name="password" placeholder="password">
+        <input type="password" name="password_repeat" placeholder="repeat password">
+        <input type="checkbox" name="confirmation" placeholder="вы согласны с нашими условиями">
+
+        <span>I Agree to the terms & conditions</span>
+
+        {{ form.errors }}
+
+        <button type="submit">войти</button>
+    </form>
+</body>
+</html>
